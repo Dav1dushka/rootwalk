@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rootwalk"
+version = "0.1.0"
+description = "A small iterative DNS resolver written from scratch: follows referrals from the root and shows every hop."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Davyd Velychko" }]
+dependencies = []
+
+[project.scripts]
+rootwalk = "rootwalk.cli:main"
+
+[tool.setuptools]
+packages = ["rootwalk"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "B", "I"]
